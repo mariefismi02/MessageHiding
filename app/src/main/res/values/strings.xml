@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Hide Ur Message</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Message Hide</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="about">About</string>
+    <string name="encrypt">Encrypt/Decrypt</string>
+    <string name="name">Muhammad Arief Ismirianda</string>
+    <string name="prodi">D3 Teknologi Komputer</string>
+    <string name="masukkan_pesan">Masukkan Pesan:</string>
+    <string name="pilih_gambar">Pilih Gambar:</string>
+    <string name="amankan">Amankan</string>
+    <string name="pilih">PILIH</string>
+    <string name="hasil">Hasil:</string>
+    <string name="pulihkan">Pulihkan</string>
+    <string name="detail">Detail</string>
+    <string name="simpan">Simpan</string>
+    <string name="log">Log</string>
+
+    <string-array name="log_type">
+        <item>All</item>
+        <item>Encrypt</item>
+        <item>Decrypt</item>
+    </string-array>
+</resources>
