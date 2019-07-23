@@ -159,6 +159,10 @@ class DecryptFragment : Fragment(), TextDecodingCallback{
     }
 
     override fun onCompleteTextEncoding(result: ImageSteganography?) {
+        val key = "mariefismi02"
+        val salt = "msghd0619"
+        val iv = ByteArray(16)
+        val encryption = Encryption.getDefault(key, salt, iv)
 
         if (result != null) {
             if ((!result.isDecoded))
@@ -176,7 +180,7 @@ class DecryptFragment : Fragment(), TextDecodingCallback{
                         stegoData.sizeBefore =
                             FileUtils.getRealSizeFromUri(context!!, Uri.parse(stegoData.imageURI)).toInt()
 
-                        stegoData.message = msg
+                        stegoData.message = encryption.decryptOrNull(msg)
 
                         val date = SimpleDateFormat("dd/MM/yyyy G 'at' HH:mm:ss")
                         stegoData.executedTime = date.format(Date())

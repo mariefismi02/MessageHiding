@@ -141,6 +141,10 @@ class EncryptFragment : Fragment(), TextEncodingCallback {
     }
 
     private fun encryptImage(password: String) {
+        val key = "mariefismi02"
+        val salt = "msghd0619"
+        val iv = ByteArray(16)
+        val encryption = Encryption.getDefault(key, salt, iv)
 
         stegoData.message = msgET.text.toString()
 
@@ -165,7 +169,9 @@ class EncryptFragment : Fragment(), TextEncodingCallback {
             //kalkulasi waktu enkripsi
             stegoData.executionTime = System.nanoTime()
 
-            var imgSteganography = ImageSteganography(stegoData.message, password, bmp)
+            val encrypted = encryption.encryptOrNull(stegoData.message)
+
+            var imgSteganography = ImageSteganography(encrypted, password, bmp)
 
             var textEncoding = TextEncoding(this.activity, this)
 
